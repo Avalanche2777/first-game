@@ -1,0 +1,75 @@
+# Made in python.
+
+
+import time
+
+print("Welcome to my game!")
+time.sleep(0.5)
+name = input("What is your name? ")
+time.sleep(0.5)
+age = int(input('what is your age? '))
+
+
+time.sleep(1)
+print('Hello', name, 'you are', age,'years old')
+
+health = 10
+
+is_older = age >= 18
+if age >= 18:
+  time.sleep(0.5)
+  print('You are old enough!')
+
+  wants_to_play = input('Do you want to play?(yes / no) ').lower()
+  if wants_to_play == "yes":
+    time.sleep(0.5)
+    print("Let's play")
+    time.sleep(0.5)
+    print('You are starting with', health ,"Health")
+
+    time.sleep(0.5)
+
+    left_or_right = input("First choice... Left or right (Left / Right)? ").lower()
+    if left_or_right == "left":
+      time.sleep(0.5)
+      ans = input('Nice, you came across a lake, do you swim across or go around (across / around)? ').lower()
+      if ans == "around":
+        time.sleep(0.5)
+        print("You went around the lake and reached the other side of the lake")
+
+      elif ans == "across":
+        time.sleep(0.5)
+        print('You managed to get across but you got bit by a fish and lost 5 Health')
+        health -= 5
+        time.sleep(0.5)
+        print('You now have',health,'health')
+      time.sleep(0.5)
+      ans = input('You notice a house and a river, which do you go to? (river / house)? ').lower()
+      if ans == "house":
+        time.sleep(0.5)
+        print("you enter the house, and are greeted by the owner.. he hits you and you lose 5 health")
+        health -=5
+
+        time.sleep(0.5)
+        if health <= 0:
+         print("You now have 0 health and you have died...")
+        else:
+         print("You have survived! You Win!")
+
+
+      
+      else:
+        time.sleep(0.5)
+        print("You fell in the river and died...(As i stated, delete the game...)")
+   
+    else:
+      time.sleep(0.5)
+      print("You fell in the hole and died...(Dude honestly... delete the game... you aren't good...)")
+
+  else:
+    time.sleep(0.5)
+    print('See you next time!')
+
+else:
+  time.sleep(0.5)
+  print('You are not old enough to play!')
